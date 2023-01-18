@@ -365,7 +365,7 @@ s = document.getElementsByClassName('share');
 for(let i=0;i<s.length;i++){
   s[i].onclick = function (e){
     navigator.share({ 
-        title: 'link', 
+        title: 'Interactive CSS', 
         url: url,
     }).then(() => {
       console.log('l')
