@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<title>Interactive CSS</title>
+</head>
+<body>
+  <div class="header">
+     <a href="https://github.com/sdshan8">
+    <div class="self-main se pfp" alt="avatar" ></div></a>
+    <div class="logo se" style="color:var(--accent);font-weight:1000">
+      <span>
+        CSS
+      </span>
+    </div>
+    <div class="right-btn se">
+      <i class="bi bi-stars" ></i>
+    </div>
+  </div>
+  <div class="main" id="content">
+<style >
+body, html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Sans-Serif;
+  transition: all 100ms;
+}
+:root {
+   /* colors */
+  --accent: #555;
+  --accent-text: #1B9EF0;
+  --bg: black;
+  --bg-error: #ff666644;
+  --bg-t: rgba(0,0,0,0.8);
+  --text: white;
+  --text-gray: #778088;
+  --gray: #333537;
+  --border: #333537;
+  
+   /* values */
+  --pfp-border-rad: 10px;
+  --border-rad: 10px;
+  --filter: blur(10px);
+  --max-width: 500px;
+}
+html {
+  font-size: 16px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+.main {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  background-color: var(--bg);
+  color: var(--text);
+  justify-content: space-around;
+}
+#timeline {
+  z-index: 2;
+  margin-top: calc(3rem + 1px);
+  width: 100%;
+  margin-bottom: calc(4rem + 1px);
+  color: var(--text);
+  overflow-y: scroll!important;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+.tlcon {
+  width: 100%;
+  max-width: var(--max-width);
+}
+html {
+  font-size: 16px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: white;
+    --bg-t: rgba(255,255,255,0.8);
+    --text: black;
+    --border: #dddddd;
+    --text-gray: #778088;
+    --gray: #333537;
+  }
+}
+.header {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  height: 3rem;
+  width: 100%;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text);
+  border-bottom: 0.5px solid var(--border);
+  background-color: var(--bg-t);
+  backdrop-filter: var(--filter);
+  -webkit-backdrop-filter: var(--filter);
+}
+.se:first-child {
+  margin-left: 0.5rem;
+}
+.se:last-child {
+  margin-right: 0.5rem;
+}
+.right-btn {
+  width: 2rem;
+  font-size: 24px;
+  color: var(--text);
+}
+.tweets {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 0.35rem;
+  padding: 0 0.7rem 0.7rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  color: var(--text);
+}
+.twt {
+  display: flex;
+  margin-top: 0.35rem;
+}
+.author-pfp {
+  flex-shrink: 0;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: var(--pfp-border-rad);
+  border: solid 0.5px var(--border);
+  background-color: var(--text);
+}
+.fixer {
+  margin-left: 1.2rem;
+  flex-grow: 1;
+}
+.author-info {
+  display: flex;
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+.tweet-content {
+  word-break: break-word;
+  margin-right: 0.7rem;
+}
+.css {
+  display: block;
+  color: var(--text-gray);
+  white-space: pre;
+  word-break: break-word;
+}
+.inputs {
+  font-size: 16px;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 2rem;
+  color: var(--text-gray);
+}
+.nav {
+  z-index: 2;
+  position: fixed;
+  height: 3.5rem;
+  width: 100%;
+  bottom: 0;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--text);
+  border-top: 0.5px solid var(--border);
+  background-color: var(--bg-t);
+  backdrop-filter: var(--filter);
+  -webkit-backdrop-filter: var(--filter);
+}
+.self-main {
+  height: 2rem;
+  width: 2rem;
+  border-radius: var(--pfp-border-rad);
+}
+.pfp {
+  background: url('https://avatars.githubusercontent.com/u/44458569');
+  background-size:cover;
+}
+.tl {
+  display: none;
+}
+@media only screen and (min-width: 600px) {
+  .tlcon {
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    margin: 0;
+    height: calc(100vh - 9rem);
+    max-width: var(--max-width);
+  }
+  .nav {
+    display: none;
+  }
+  .header {
+    display: none;
+  }
+  .tl {
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    font-family: Tahoma, Arial, Sans-Serif;
+    max-width: var(--max-width);
+  }
+}
+a, a:visited {
+  text-decoration-color: none;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.iframe-con {
+  margin-top: 0.3rem;
+  border: solid 0.5px var(--border);
+  border-radius: var(--border-rad);
+  overflow: hidden;
+  display: inline-block;
+  background-color: var(--bg);
+  align-items: center;
+  width: 100%;
+  background: #fff;
+}
+iframe {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  position: relative;
+  height: 25rem;
+}
+</style>
+    <div class="tlcon">
+    <div class="header tl">
+    <div class="home se">
+      <span>Home</span>
+    </div>
+    <div class="right-btn se">
+      <i class="bi bi-stars" ></i>
+    </div>
+  </div>
+    <div id="timeline">
+<div class="tweets">
+<div class="twt">
+   <a href="https://github.com/sdshan8">
+  <div class="author-pfp pfp" alt="avatar"></div>
+  </a>
+  <div class="fixer">
+    <div class="author-info">
+      <a href="https://github.com/sdshan8">
+        <b class="author-name">
+          Shan
+        </b>
+        <span style="color:var(--accent)">
+<i class="bi bi-patch-check-fill"></i>
+        </span>
+        <span style="color:var(--text-gray)">
+          @sdshan8
+        </span>
+      </a>
+    </div>
+    <div class="tweet-content">
+      Just an interactive CSS demo. Inspired by this video
+<div class="iframe-con">
+<iframe src="https://www.youtube.com/embed/D02AK3WoYH8" title="🔥 Any HTML element can be visible/editable with block; and contenteditable - including style tags!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+    </div>
+    <div class="inputs">
+      <i class="bi bi-chat"></i>
+      <i class="bi bi-repeat"></i>
+      <i class="bi bi-heart"></i>
+      <div class="share">
+      <i class="bi bi-share"></i>
+      </div>
+    </div>
+  </div>
+</div>
+</viv>
+<div class="tweets">
+</div>
+<div class="twt">
+  <img class="author-pfp" alt="avatar" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"/>
+  <div class="fixer">
+    <div class="author-info">
+      <span>
+        <b class="author-name">
+          Interactive CSS
+        </b>
+        <span style="color:var(--accent)">
+<i class="bi bi-patch-check-fill"></i>
+        </span>
+        </span>
+      </span>
+    </div>
+    <style contenteditable class="tweet-content css">:root {
+  /* colors */
+  --accent: #9833eb;
+  --accent-text: #1B9EF0;
+  --bg: black;
+  --bg-error: #ff666644;
+  --bg-t: rgba(0,0,0,0.8);
+  --text: white;
+  --text-gray: #778088;
+  --gray: #333537;
+  --border: #333537;
+  
+  /* values */
+  --pfp-border-rad: 10px;
+  --border-rad: 10px;
+  --filter: blur(10px);
+  --max-width: 500px;
+}
+.tweets {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 0.35rem;
+  font-size: 15px;
+  color: var(--text);
+}
+</style>
+    <div class="inputs">
+      <i class="bi bi-chat"></i>
+      <i class="bi bi-repeat"></i>
+      <i class="bi bi-heart"></i>
+      <div class="share">
+      <i class="bi bi-share"></i>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div style="width:100%;display:flex;justify-content:center">
+<span style="margin: 0.4rem auto auto auto;color: var(--text-gray)">•</span>
+</div>
+    </div>
+    </div>
+  </div>
+<nav class="nav">
+  <i id="home" class="bi bi-house-heart-fill"></i>
+  <i id="search" class="bi bi-search-heart"></i>
+  <i id="comm" class="bi bi-people"></i>
+  <i id="noti" class="bi bi-bell"></i>
+  <i id="dms" class="bi bi-envelope"></i>
+</nav>
+<script>
+let url = window.location.href;
+
+s = document.getElementsByClassName('share');
+for(let i=0;i<s.length;i++){
+  s[i].onclick = function (e){
+    navigator.share({ 
+        title: 'link', 
+        url: url,
+    }).then(() => {
+      console.log('l')
+    }).catch(err => {
+      console.log(err)
+    });
+  }
+}
+</script>
+</body>
+</html>
