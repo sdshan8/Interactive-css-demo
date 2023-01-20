@@ -33,9 +33,7 @@ body, html {
 :root {
    /* colors */
   --accent: #555;
-  --accent-text: #1B9EF0;
   --bg: black;
-  --bg-error: #ff666644;
   --bg-t: rgba(0,0,0,0.8);
   --text: white;
   --text-gray: #778088;
@@ -153,13 +151,13 @@ html {
 }
 .tweet-content {
   word-break: break-word;
+  word-wrap: break-all;
   margin-right: 0.7rem;
 }
 .css {
   display: block;
-  color: var(--text-gray);
-  white-space: pre;
-  word-break: break-word;
+  white-space: pre-line;
+  word-wrap: break-all;
 }
 .inputs {
   font-size: 16px;
@@ -197,6 +195,14 @@ html {
 }
 .tl {
   display: none;
+}
+.tweets {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 0.35rem;
+  font-size: 15px;
+  color: var(--text);
 }
 @media only screen and (min-width: 600px) {
   .tlcon {
@@ -275,7 +281,8 @@ iframe {
       </a>
     </div>
     <div class="tweet-content">
-      Just an interactive CSS demo. Inspired by this video
+      Just an interactive CSS demo by setting the display property of style tag to block.
+      Inspired by this video
 <div class="iframe-con">
 <iframe src="https://www.youtube.com/embed/D02AK3WoYH8" title="🔥 Any HTML element can be visible/editable with block; and contenteditable - including style tags!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
@@ -310,9 +317,7 @@ iframe {
     <style contenteditable class="tweet-content css">:root {
   /* colors */
   --accent: #9833eb;
-  --accent-text: #1B9EF0;
   --bg: black;
-  --bg-error: #ff666644;
   --bg-t: rgba(0,0,0,0.8);
   --text: white;
   --text-gray: #778088;
@@ -325,6 +330,13 @@ iframe {
   --filter: blur(10px);
   --max-width: 500px;
 }
+.css {
+  display: block;
+  white-space: pre-line;
+  word-wrap: break-all;
+  color: #9c9;
+  font-family: Courier;
+}
 .tweets {
   display: flex;
   flex-wrap: wrap;
@@ -332,6 +344,11 @@ iframe {
   margin-top: 0.35rem;
   font-size: 15px;
   color: var(--text);
+}
+@media screen {
+  /* true real-time*/
+  
+  
 }
 </style>
     <div class="inputs">
@@ -375,5 +392,10 @@ for(let i=0;i<s.length;i++){
   }
 }
 </script>
+<style>
+.css {
+  display: block;
+}
+</style>
 </body>
 </html>
