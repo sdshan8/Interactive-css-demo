@@ -1,0 +1,46 @@
+.highLite{
+  display: block;
+  border: solid 0.5px var(--border);
+  border-radius: var(--border-rad);
+  position: relative;
+  overflow: auto;
+  height: auto; /* set as desired */
+}
+
+.highLite_colors,
+.highLite_editable {
+  font-family: Courier;
+  white-space: pre;
+  word-wrap: break-all;
+  padding: 0.5rem;
+  min-height: calc(100% - 1rem);
+}
+
+/* THE UNDERLAYING ONE WITH COLORS */
+.highLite_colors {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; 
+  user-select: none;
+  color: var(--code-text);
+  background-color: var(--code-bg);
+}
+
+/* THE OVERLAYING CONTENTEDITABLE WITH TRANSPARENT TEXT */
+.highLite_editable {
+  display: block;
+  position: relative;
+  color: transparent; /* Make text invisible */
+  caret-color: var(--code-text); /* But keep caret visible */
+}
+.highLite_editable:focus {
+  outline: none;
+}
+
+.hl_bracket{ color: #05BC79; }
+.hl_curly{ color: #2472C8; }
+.hl_comment{ color: #666666; }
+.hl_color{ color: #0aac89; }
+.hl_var{ color: #e5a212; }
