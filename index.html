@@ -50,6 +50,7 @@ html {
   font-size: 16px;
   background-color: var(--bg);
   color: var(--text);
+  /* height: 100%; */
 }
 .main {
   z-index: 1;
@@ -59,14 +60,15 @@ html {
   background-color: var(--bg);
   color: var(--text);
   justify-content: space-around;
+  /* height: 100%; */
 }
 #timeline {
-  z-index: 2;
+  z-index: 1;
   margin-top: calc(3rem + 1px);
   width: 100%;
   margin-bottom: calc(4rem + 1px);
   color: var(--text);
-  overflow-y: scroll!important;
+  /* overflow-y: scroll!important; */
   flex-direction: column;
   align-items: center;
   align-content: center;
@@ -164,6 +166,7 @@ html {
   padding: 0.5rem;
   border: solid 0.5px var(--border);
   border-radius: var(--border-rad);
+  overflow: hidden;
 }
 .inputs {
   font-size: 16px;
@@ -215,7 +218,7 @@ html {
     border-left: 1px solid var(--border);
     border-right: 1px solid var(--border);
     margin: 0;
-    height: calc(100vh - 9rem);
+    /* height: calc(100vh - 9rem); */
     max-width: var(--max-width);
   }
   .nav {
