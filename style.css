@@ -15,17 +15,6 @@ body, html {
   --text-gray: #778088;
   --gray: #333537;
   --border: #333537;
-
-   /* Code Colors */
-  --code-bg: #262A33;
-  --code-text: #E5E5E5;
-
-   /* Highlighting Colors */
-  --hl-bracket: #05BC79;
-  --hl-curly: #2472C8;
-  --hl-comment: #666666;
-  --hl-color: #0aac89;
-  --hl-var: #e5a212;
   
    /* values */
   --pfp-border-rad: 10px;
@@ -74,8 +63,6 @@ html {
     --bg: white;
     --bg-t: rgba(255,255,255,0.8);
     --text: black;
-    --code-bg: #E5E5E5;
-    --code-text: #262A33;
     --border: #dddddd;
     --text-gray: #778088;
     --gray: #333537;

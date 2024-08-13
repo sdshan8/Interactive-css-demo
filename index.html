@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <!-- Highlighting -->
+  <link rel="stylesheet" href="highlight/highlight.css">
+  
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="highlight.css">
-<title>Interactive CSS</title>
+  <title>Interactive CSS</title>
 </head>
 <body>
   <div class="header">
@@ -87,46 +89,7 @@
       </span>
     </div>
     <div class="highLite tweet-content">
-      <div class="highLite_colors">:root {
-  /* colors */
-  --accent: #9833eb;
-  --bg: black;
-  --bg-t: rgba(0,0,0,0.8);
-  --text: white;
-  --text-gray: #778088;
-  --gray: #333537;
-  --border: #333537;
-
-  /* Code Colors */
-  --code-bg: #262A33;
-  --code-text: #E5E5E5;
-
-  /* Highlighting Colors */
-  --hl-bracket: #05BC79;
-  --hl-curly: #2472C8;
-  --hl-comment: #666666;
-  --hl-color: #0aac89;
-  --hl-var: #e5a212;
-  
-  /* values */
-  --pfp-border-rad: 10px;
-  --border-rad: 10px;
-  --filter: blur(10px);
-  --max-width: 500px;
-}
-.tweets {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  margin-top: 0.35rem;
-  font-size: 15px;
-  color: var(--text);
-}
-@media screen {
-  /* true real-time*/
-  
-  
-}
+      <div class="highLite_colors">
 </div>
       <style class="highLite_editable" contenteditable>:root {
   /* colors */
@@ -139,15 +102,19 @@
   --border: #333537;
 
   /* Code Colors */
-  --code-bg: #262A33;
-  --code-text: #E5E5E5;
+  /*
+   * --code-bg: #262A33;
+   * --code-text: #E5E5E5;
+   */
 
   /* Highlighting Colors */
-  --hl-bracket: #05BC79;
-  --hl-curly: #2472C8;
-  --hl-comment: #666666;
-  --hl-color: #0aac89;
-  --hl-var: #e5a212;
+  /*
+   * --hl-bracket: #05BC79;
+   * --hl-curly: #2472C8;
+   * --hl-comment: #666666;
+   * --hl-color: #0aac89;
+   * --hl-var: #e5a212;
+   */
   
   /* values */
   --pfp-border-rad: 10px;
@@ -210,31 +177,7 @@ for(let i=0;i<s.length;i++){
     });
   }
 }
-const hl = {
-  brakets: /(\(|\))/g,
-  curly: /(\{|\})/g,
-  comment: /(\/\*[^*]*\*+([^\/*][^*]*\*+)*\/)/g,
-  hex_color: /(#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?\b)/g,
-  variable: /((--)[^\,\:\)]+)/g
-}
-const highLite = (el) => {
-  el.previousElementSibling.innerHTML = el.innerHTML
-     .replace(hl.comment, "<span class='hl_comment'>$1</span>")
-     .replace(hl.hex_color, "<span class='hl_color'>$1</span>")
-     .replace(hl.variable, "<span class='hl_var'>$1</span>")
-     .replace(hl.brakets, "<span class='hl_bracket'>$1</span>")
-     .replace(hl.curly, "<span class='hl_curly'>$1</span>")
-};
-
-document.querySelectorAll("[contenteditable]").forEach(el => {
-  el.addEventListener("input", () => highLite(el));
-  highLite(el);
-});
 </script>
-<style>
-.css {
-  display: block;
-}
-</style>
+<script src="highlight/highlight.js"></script>
 </body>
 </html>
