@@ -6,16 +6,19 @@
   overflow: auto;
   height: auto; /* set as desired */
 
-  /* Code Colors */
-  --code-bg: #282c34;
-  --code-text: #abb2bf;
-
   /* Highlighting Colors */
+  --hl-bg: #282c34;
+  --hl-fg: #abb2bf;
   --hl-comment: #636d83;
-  --hl-bracket: #05BC79;
-  --hl-curly: #2472C8;
-  --hl-color: #0aac89;
-  --hl-var: #e5a212;
+  --hl-keyword: #10b1fe;
+  --hl-function: #3fc56b;
+  --hl-property: #ce9887;
+  --hl-string: #f9c859;
+  --hl-number: #ff78f8;
+  --hl-constant: #9f7efe;
+  --hl-mark-tag: #3691ff;
+  --hl-mark-attr: #ff936a;
+  --hl-class: #ff6480;
   --hl-operators: #7a82da;
 }
 
@@ -36,8 +39,8 @@
   bottom: 0;
   left: 0; 
   user-select: none;
-  color: var(--code-text);
-  background-color: var(--code-bg);
+  color: var(--hl-fg);
+  background-color: var(--hl-bg);
 }
 
 /* THE OVERLAYING CONTENTEDITABLE WITH TRANSPARENT TEXT */
@@ -45,15 +48,33 @@
   display: block;
   position: relative;
   color: transparent; /* Make text invisible */
-  caret-color: var(--code-text); /* But keep caret visible */
+  caret-color: var(--hl-fg); /* But keep caret visible */
 }
 .highLite_editable:focus {
   outline: none;
 }
 
-.hl_bracket{ color: var(--hl-bracket) }
-.hl_curly{ color: var(--hl-curly); }
-.hl_color{ color: var(--hl-color); }
-.hl_operators{ color: var(--hl-operators); }
-.hl_var{ color: var(--hl-var); }
-.hl_comment{ color: var(--hl-comment); }
+.hl_symbol {
+  color: var(--hl-operators);
+}
+.hl_comment {
+  color: var(--hl-comment);
+}
+.hl_space {
+  color: var(--hl-fg);
+}
+.hl_word {
+  color: var(--hl-keyword);
+}
+.hl_function {
+  color: var(--hl-function);
+}
+.hl_atword {
+  color: var(--hl-keyword);
+}
+
+
+
+.hl_property {
+  color: var(--hl-property)
+}
